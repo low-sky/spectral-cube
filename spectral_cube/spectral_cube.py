@@ -358,6 +358,9 @@ class SpectralCube(object):
     def percentile(self, q, axis=None):
         return self._apply_along_axes(np.percentile, q=q, axis=axis)
 
+    def std(self, axis=None):
+        return self._apply_along_axes(np.std, axis=axis)
+
     # probably do not want to support this
     # def get_masked_array(self):
     #    return np.ma.masked_where(self.mask, self._data)
